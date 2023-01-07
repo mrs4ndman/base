@@ -1,0 +1,8 @@
+Prerrequisitos: Entorno de escritorio / Gestor de ventanas funcional (GNOME, KDE, i3, bspwm, similares)
+
+sudo pacman -Syu spotify-launcher --- Instalación
+sudo pacman -Rns spotify-launcher --- Desinstalación
+
+Para cambiar el zoom / tamaño de los iconos dentro de la app, Ctrl + y Ctrl -
+
+:)
