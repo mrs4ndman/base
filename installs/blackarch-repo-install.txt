@@ -1,0 +1,32 @@
+#Este .txt contiene los comandos necesarios para añadir blackarch, el repositorio de pentesting de la distro
+#"BlackArch" de pentesting y hacking ético.
+#Todo lo que viene después de --- es comentario.
+
+cd ~
+pacman -S curl
+cd ~/Downloads 
+curl -O https://blackarch.org/strap.sh
+
+--- (Cambiar Downloads por Descargas si es en español tu sistema)
+
+--- (OPCIONAL - Comprobamos el hash del strap.sh)
+sha1sum strap.sh
+--- 9f770789df3b7803105e5fbc19212889674cd503 debería ser el resultado del comando
+--- (Acaba OPCIONAL)
+
+--- Le damos permiso de ejecución al .sh para usarlo y lo ejecutamos
+
+chmod +x strap.sh
+sudo ./strap.sh
+
+--- Después de esto, tendremos que buscar dentro de BlackArch el paquete o paquetes a instalar.
+
+sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u >> blackarch-output.txt
+cat blackarch-output.txt
+
+--- El archivo nos dirá todos los paquetes dentro de blackarch.
+--- Para saber si uno está dentro del repositorio
+
+sudo pacman -Sgg | grep blackarch | grep "nombre del paquete"
+
+--- Disfruten de blackarch y no la lieis :)
