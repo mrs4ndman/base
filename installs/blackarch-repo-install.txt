@@ -29,4 +29,10 @@ cat blackarch-output.txt
 
 sudo pacman -Sgg | grep blackarch | grep "nombre del paquete"
 
---- Disfruten de blackarch y no la lieis :)
+sudo pacman -Sg | grep blackarch --- Esto nos dará una lista de las categorías dentro del repositorio.
+
+Podemos instalar categorías de paquetes concretas (hay que saber el nombre con el comando anterior) con el siguiente comando:
+
+sudo pacman -S "nombre de categoría"
+
+--- Disfruten de blackarch y no la cagen :)
