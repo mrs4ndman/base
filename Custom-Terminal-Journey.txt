@@ -1,7 +1,0 @@
-07-01-2023 - Comenzamos a explorar nuevos estilos / terminales aparte de los clásicos.
-
-Antes de los terminales, decidí seguir una guía de Youtube para instalar Gentoo de forma minimalista, dur. 45 min.
-Pruebo a instalar y configurar Alacritty
-
-sudo pacman -S alacritty
-La configuración custom puede que se haya guardado en /usr/share/doc/alacritty/example/alacritty.yml
