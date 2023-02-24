@@ -1,0 +1,26 @@
+--- Actualizamos el sistema
+
+sudo pacman -Syu
+
+--- Instalamos el paquete de Docker
+
+sudo pacman -S docker
+
+--- Lo habilitamos
+
+sudo systemctl start docker.service
+sudo systemctl status docker.service
+
+--- (comprobamos que está funcionando) Lo habilitamos en startup (ideal)
+
+sudo systemctl enable docker.service
+
+--- Nos añadimos al grupo de docker para poder usarlo
+
+sudo usermod -aG docker $USER --- Nombre de usuario ---
+
+--- Testeo final de docker
+
+sudo docker run hello-world
+
+--- :)

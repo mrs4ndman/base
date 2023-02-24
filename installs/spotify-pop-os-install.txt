@@ -1,0 +1,17 @@
+--- Hay 3 maneras de instalar Spotify con Pop_OS como sistema operativo:
+
+--- 1.- Por flatpak (desde la Pop Shop): Ejecutas la aplicación de Pop Shop, buscas Spotify y lo instalas. 1 click y listo.
+
+--- 2.- Por snap (desde línea de comandos pero solo 1): En distribuciones basadas en Ubuntu,
+	
+sudo apt install snapd
+sudo snap install spotify
+	
+--- 3.- Por repositorio (se actualiza con frecuencia): https://www.spotify.com/us/download/linux/
+	
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmos --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+sudo apt (o apt-get) update && sudo apt install spotify-client
+
+--- Y ya estaría :)
