@@ -1,0 +1,52 @@
+- NO ME HAGO CARGO DE ERRORES DE ESCRITURA EN ARCHIVOS DE TEXTO / NOMBRES DE SERVICIOS -
+
+1.- Identificamos el tipo de batería: 
+
+ls /sys/class/power_supply
+
+- Esto debería devolver BAT0 , BAT1 o BATT , que son los nombres de hardware de las baterías.
+
+2.- Ahora, comprobamos que podemos establecer el valor de porcentaje de la batería.
+
+cat /sys/class/power_supply/BAT*/charge_control_end_threshold
+
+- Esto nos permite ver si existe el archivo y el porcentaje de carga máximo de la batería. Puede ser útil después de configurarlo.
+
+3.- El paso mas importante - Creamos el demonio que configurará el porcentaje. Se asume que tu sistema Linux tiene systemd como gestor de demonios principal (si usas systemctl vale).
+
+- Tendremos que crear, con un editor de texto el siguiente archivo:
+
+	sudo *editor a elegir* /etc/systemd/system/battery-charge-threshold.service
+
+- Contenido del archivo: Donde pone PORCENTAJE-DE-BATERIA, borrar eso y escribir el porcentaje (por encima de 60 va bien), y, donde pone NOMBRE-BATERIA, escribir el nombre que hemos sacado en el paso 1.
+
+
+[Unit]
+Description=Fijar el porcentaje de carga de la bateria
+After=multi-user.target
+StartLimitBurst=0
+
+[Service]
+Type=oneshot
+Restart=on-failure
+ExecStart=/bin/bash -c 'echo PORCENTAJE-DE-BATERIA > /sys/class/power_supply/NOMBRE-BATERIA/charge_control_end_threshold'
+
+[Install]
+WantedBy=multi-user.target
+
+
+4.- Habilitamos el servicio que acabamos de crear:
+
+sudo systemctl enable battery-charge-threshold.service
+sudo systemctl start battery-charge-threshold.service
+
+5.- El servicio ya funciona, para cambiar el valor:
+
+- Habría que cambiar el argumento de PORCENTAJE-DE-BATERIA al número que queramos.
+Para comprobar el porcentaje configurado, rehacer paso 2.
+
+- Para comprobar si la batería está cargando o no:
+
+(sudo si necesario) cat /sys/class/power_supply/NOMBRE-BATERIA/status
+
+- Si hay algún error, no dudes en dejarlo en mi Github: https://github.com/mrs4ndman
