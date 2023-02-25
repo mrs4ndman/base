@@ -1,0 +1,42 @@
+--- Instalación Virt-manager + QEMU para virtualizar en Ubuntu / PopOS:
+
+1.- Instalamos los paquetes necesarios para QEMU y KVM como bases de virtualización:
+
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+
+2.- Instalamos Virt-manager, que es la GUI de creación, gestión y uso de máquinas virtuales:
+
+sudo apt install virt-manager
+
+3.- Comprobamos que KVM está funcionando:
+
+kvm-ok
+
+// OUTPUT
+INFO: /dev/kvm exists
+KVM acceleration can be used
+
+
+4.- Añadimos nuestro usuario a los grupos libvirt y kvm (puede que ya esté en alguno de los 2).
+Si ya está en alguno de los 2, no hagas el comando (lo puedes comprobar con "groups NOMBRE-TU-USUARIO", tanto antes como después).
+
+sudo adduser "NOMBRE-TU-USUARIO" libvirt
+sudo adduser "NOMBRE-TU-USUARIO" kvm
+
+5.- Habilitamos y arrancamos el demonio de libvirt:
+
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+
+--- Ahora comprobamos que el demonio se ha arrancado bien:
+
+sudo systemctl status libvirtd
+
+6.- Para acabar la configuración, reiniciamos el equipo en el que vayamos a virtualizar, y ya estaría:
+
+systemctl reboot
+
+7.- Si después de reiniciar, ejecutamos virt-manager o lo buscamos entre nuestras aplicaciones, la GUI instalada debería aparecer.
+
+
+:)
