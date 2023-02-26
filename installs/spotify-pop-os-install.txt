@@ -9,7 +9,7 @@ sudo snap install spotify
 	
 --- 3.- Por repositorio (se actualiza con frecuencia): https://www.spotify.com/us/download/linux/
 	
-curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmos --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
 sudo apt (o apt-get) update && sudo apt install spotify-client
