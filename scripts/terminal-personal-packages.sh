@@ -1,5 +1,5 @@
 #!/bin/bash
-#Válido para PopOS, Ubuntu, Debian y derivativos
+#Válido para PopOS, debería funcionar en Ubuntu, Debian y derivativos
 #Incluye mis herramientas de uso común del terminal, recomiendo ir por GitHub.com a ver lo que hacen, si no las conoces claro ;)
 
 #!/bin/bash
