@@ -15,6 +15,8 @@ sudo apt install -y thefuck tldr bashtop nyancat lolcat speedtest-cli neofetch l
 echo -e "Ya se han instalado las utilidades. Comprueba los errores ejecutando \e[3mcat errors.txt\e[0m"
 /bin/bash neofetch
 echo "No he roto nada, puedes hacer un cat de este archivo (el .sh que te has descargado) para ver lo que pasa. Si quieres revertirlo, usa el script de desinstalación ;)"
+echo "Si tldr no funciona, ejecutar el comando tldr -u para crear la base de datos de resúmenes de comandos"
+echo "Para que la utilidad \e[3mthefuck\e[0m funcione, hay que añadir manualmente lo siguiente: eval $(thefuck --alias)"
 else
   echo "Abortando..."
   exit 0
