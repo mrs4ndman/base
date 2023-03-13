@@ -9,7 +9,7 @@ read answer
 sleep 2
 if [ "$answer" = "S" ] || [ "$answer" = "s" ]; then
 
-sudo apt update && \
+sudo apt update
 sudo apt install -y thefuck \
 tldr \
 bashtop \
