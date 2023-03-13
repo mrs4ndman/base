@@ -16,6 +16,7 @@ nyancat \
 lolcat \
 speedtest-cli \
 neofetch \
+smartmontools \
 lshw \
 tree \
 vim \
