@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Probado con PopOS (y su terminal por defecto), Tilix y VIM 
 sudo add-apt-repository universe
 sudo apt install -y powerline fonts-powerline python3 python3-pip python3-setuptools
 
@@ -26,4 +26,5 @@ powerline-daemon --replace
 
 #Añadir "args": { "status_colors": true }
 #Luego hay que ejecutar source $HOME/.bashrc para finalizar los cambios.
+#Fuente a usar en terminal por defecto: Droid Sans Mono for Powerline
 
