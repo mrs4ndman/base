@@ -10,7 +10,30 @@ sleep 2
 if [ "$answer" = "S" ] || [ "$answer" = "s" ]; then
 
 sudo apt update && \
-sudo apt install -y thefuck tldr bashtop nyancat lolcat speedtest-cli neofetch lshw vim neovim git curl wget tmux cmatrix net-tools 2> errors.txt  && tldr -u 2>&1
+sudo apt install -y thefuck \
+tldr \
+bashtop \
+nyancat \
+lolcat \
+speedtest-cli \
+neofetch \
+lshw \
+vim \
+neovim \
+git \
+curl \
+wget \
+tmux \
+cmatrix \
+net-tools \
+python3 \
+python3-dev \
+python3-pip \
+python3-setuptools \
+
+2> errors.txt  && pip install powerline-status
+
+&& tldr -u 2>&1
 
 echo -e "Ya se han instalado las utilidades. Comprueba los errores ejecutando \e[3mcat errors.txt\e[0m"
 /bin/bash neofetch
