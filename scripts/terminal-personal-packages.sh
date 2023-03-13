@@ -20,6 +20,8 @@ smartmontools \
 lshw \
 tree \
 vim \
+ufw \
+gufw \
 neovim \
 git \
 curl \
