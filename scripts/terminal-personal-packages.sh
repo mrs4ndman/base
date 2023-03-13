@@ -11,6 +11,7 @@ sudo apt update
 sudo apt install -y thefuck \
 tldr \
 bashtop \
+tree \
 nyancat \
 lolcat \
 speedtest-cli \
