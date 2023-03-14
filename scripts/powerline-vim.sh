@@ -19,7 +19,7 @@ python3 del powerline_setup
 set laststatus=2">> $HOME/.vimrc
 
 mkdir -p $HOME/.config/powerline
-cp -R /usr/share/pwoerline/config_files/* \
+cp -R /usr/share/powerline/config_files/* \
 	$HOME/.config/powerline/
 
 powerline-daemon --replace
