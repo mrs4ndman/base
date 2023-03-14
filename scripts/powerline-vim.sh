@@ -24,7 +24,17 @@ cp -R /usr/share/powerline/config_files/* \
 
 powerline-daemon --replace
 
-#Añadir "args": { "status_colors": true }
+echo "Añadir \"args\": { \"status_colors\": \true } a la parte 
+de .vcs.branch de .config/powerline/themes/shell/default_leftonly.json"
 #Luego hay que ejecutar source $HOME/.bashrc para finalizar los cambios.
 #Fuente a usar en terminal por defecto: Droid Sans Mono for Powerline
+
+# clonamos el repositorio de fuentes
+git clone https://github.com/powerline/fonts.git --depth=1
+# instalamos
+cd fonts
+./install.sh
+# limpiamos un poquito las cosas
+cd ..
+rm -rf fonts
 
