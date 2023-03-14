@@ -22,6 +22,7 @@ tree \
 vim \
 ufw \
 gufw \
+trash-cli \
 neovim \
 git \
 curl \
