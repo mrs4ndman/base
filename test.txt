@@ -1,0 +1,5 @@
+IGNORE PLS
+
+I'm testing the SSH connection to my public repos from Git CLI
+
+IGNORE PLS
